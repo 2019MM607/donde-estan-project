@@ -3,6 +3,7 @@ const baseUrl = 'http://192.168.0.11:4000/api/desaparecidos';
 export const getAll = async () =>{
     const response = await fetch(baseUrl);
     const data = await response.json();
+  
     return data;
 }
 

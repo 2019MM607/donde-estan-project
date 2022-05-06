@@ -3,6 +3,8 @@ import { useNavigation } from '@react-navigation/native';
 import { Formik, useFormik } from 'formik';
 import { Button, CheckIcon, FormControl, Input, ScrollView, Select, Stack, TextArea, useToast, View, VStack } from 'native-base';
 import React from 'react';
+import { Image, Input as Entrada } from 'react-native-elements';
+
 import { useMutation } from 'react-query';
 import { postOne } from '../services/api_services';
 
@@ -134,7 +136,7 @@ export default function AgregarDesaparecido() {
                             selectedValue={formik.values.sexo}
                             placeholder="Sexo"
                             _selectedItem={{
-                                bg: "#0B1F3B",
+                              
                                 endIcon: <CheckIcon size="5" />
                             }}
                             mt={1}
@@ -145,10 +147,6 @@ export default function AgregarDesaparecido() {
                         </Select>
                     </Stack>
                 </FormControl>
-
-                
-
-                
 
                 <FormControl my='4'>
                     <Button bg='#0B1F3B' type='submit' onPress={handlePress} >Enviar</Button>

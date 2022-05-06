@@ -22,8 +22,8 @@ export default function App() {
 
       <NavigationContainer>
 
-          <QueryClientProvider client={client}>
-        <Drawer.Navigator initialRouteName="Desaparecidos">
+        <QueryClientProvider client={client}>
+          <Drawer.Navigator initialRouteName="Desaparecidos">
             <Drawer.Screen name="Desaparecidos"
               component={Home}
               options={{ headerStyle: { backgroundColor: '#0B1F3B' }, headerTintColor: '#BDC2C6', drawerActiveBackgroundColor: '#0B1F3B', drawerActiveTintColor: '#BDC2C6' }}
@@ -46,11 +46,11 @@ export default function App() {
               options={{ headerStyle: { backgroundColor: '#0B1F3B' }, headerTintColor: '#BDC2C6', drawerActiveBackgroundColor: '#0B1F3B', drawerActiveTintColor: '#BDC2C6' }}
             />
 
-        </Drawer.Navigator>
-      </QueryClientProvider >
-    </NavigationContainer>
+          </Drawer.Navigator>
+        </QueryClientProvider >
+      </NavigationContainer>
 
-      </NativeBaseProvider >
+    </NativeBaseProvider >
 
   );
 }

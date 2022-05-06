@@ -39,7 +39,7 @@ export const TarjetaDesaparecido = ({desaparecido}) => {
 
     return (
         <Box w='sm'
-            h='auto'
+            h='md'
             mx='5'
             my='5'
             bg='white'

@@ -1,8 +1,9 @@
 import { useFormik } from 'formik';
-import { Button, Center, FormControl, HStack, Icon, Input, SearchIcon, Stack, Text } from 'native-base';
+import { Button, Center, FormControl, HStack, Icon, Input, ScrollView, SearchIcon, Stack, Text } from 'native-base';
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { useQuery } from 'react-query';
+import { TarjetaDesaparecido } from '../components/TarjetaDesaparecido';
 import { getOne } from '../services/api_services';
 
 export const DesaparecidoByName = () => {
@@ -11,20 +12,20 @@ export const DesaparecidoByName = () => {
     const formik = useFormik({
         initialValues: {
             nombre: '',
-
         },
     })
 
-    const filter = () =>{
-        const data = getOne(formik.values.nombre)
+    const filter = async () =>{
+        const data = await getOne(formik.values.nombre)
         console.log(data)
         setDesaparecido(data)
+        formik.setFieldValue('nombre', '')
     }
     return (
         <View>
 
             <Center>
-                <Text m={8}>Encuentra un desaparecido por su nombre</Text>
+                <Text m={2}>Encuentra un desaparecido por su nombre</Text>
             </Center>
 
             <View>
@@ -45,7 +46,12 @@ export const DesaparecidoByName = () => {
                 </FormControl>
             </View>
 
-            <TargetaDesaparecido desaparecido={desaparecido}  />
+           
+            {
+                desaparecido && <TarjetaDesaparecido desaparecido={desaparecido.desaparecido} />
+            }
+            
+            
         </View>
     );
 }
